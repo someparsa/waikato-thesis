@@ -1,0 +1,48 @@
+\chapter{Introduction}
+\label{ch:intro}
+
+This is an example chapter. Abbreviations are typeset with \gls{ai} and
+\gls{ml}; symbols such as \gls{sym:E} come from \texttt{symbols.tex}.
+References are cited as usual~\cite{lamport1994}.
+
+Figures, tables and algorithms are collected by \texttt{endfloat} and
+printed in the appendices at the end of the document
+(see Figure~\ref{fig:example}, Table~\ref{tab:example} and
+Algorithm~\ref{alg:example}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{example-image}
+  \caption{An example figure.}
+  \label{fig:example}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{An example table.}
+  \label{tab:example}
+  \begin{tabular}{lr}
+    \toprule
+    Item & Value \\
+    \midrule
+    A & 1 \\
+    B & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{algorithm}[htbp]
+  \caption{An example algorithm.}
+  \label{alg:example}
+  \begin{algorithmic}[1]
+    \For{$i \gets 1$ to $n$}
+      \State $s \gets s + i$
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+\begin{definition}
+  This is an example definition environment.
+\end{definition}
+
+\lipsum[1-3]

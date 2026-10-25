@@ -1,0 +1,84 @@
+\documentclass{thesis}
+
+\input{abbreviations}
+\input{symbols}
+
+\setthesistitle{Thesis Title}
+%\setthesissubtitle{Optional Subtitle}
+\setdegreename{Doctor of Philosophy in Engineering}
+\setuniversityname{The University of Waikato}
+\setauthorname{Author Name}
+\setsubmissionyear{2026}
+%\setfulfilment{fulfilment}            % default: partial fulfilment
+%\setthesislogo{figures/logo.jpg}      % default: placeholder box
+
+\setcounter{tocdepth}{2}
+\renewcommand{\cftsubsectionfont}{\footnotesize}
+
+% \includeonly{chapters/Chapter01}
+
+\begin{document}
+
+% "For Review" stamp on every page -- remove for the final version
+\AddToShipoutPicture{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[
+            anchor=south east,
+            xshift=-10pt,
+            yshift=10pt
+        ] at (current page.south east) {
+            \fcolorbox{blue}{blue}{
+                \textcolor{white}{{\textsc{For Review (\DTMtoday)}}}
+            }
+        };
+    \end{tikzpicture}
+}
+
+% ==========================
+% FRONT MATTER
+% ==========================
+\frontmatter
+\makethesistitle
+
+\input{chapters/Chapter00}
+\cleardoublepage
+
+\tableofcontents*
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
+\newpage
+\cleardoublepage
+\listofalgorithms
+\newpage
+\cleardoublepage
+
+\printglossary[type=\acronymtype, style=long, title=List of Abbreviations]
+\markboth{\MakeUppercase{List of Abbreviations}}{\MakeUppercase{List of Abbreviations}}
+
+% \printglossary[type=symbols, style=long, title=List of Symbols]
+% \markboth{\MakeUppercase{List of Symbols}}{\MakeUppercase{List of Symbols}}
+
+% ==========================
+% MAIN MATTER
+% ==========================
+\mainmatter
+
+\include{chapters/Chapter01}
+% \include{chapters/Chapter02}
+% ...
+
+% ==========================
+% BACK MATTER
+% ==========================
+\backmatter
+
+\printbibliography[title={References}]
+
+% \chapterstar{Index}
+% \printindex
+
+\appendix
+
+\end{document}
